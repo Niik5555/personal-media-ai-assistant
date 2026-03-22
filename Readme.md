@@ -1,51 +1,55 @@
-# Application Name
+# Personal Media Search AI Assistant
 
-## Description
-This application [brief description of what it does].  
-This README includes all commands necessary to set up, launch, and handle cases when another user is already using the application.
+**AI-powered tool to search and analyze your personal documents, images, and videos.** Upload files, query them, and get structured insights in real time.
+
+---
+
+## Features
+
+- Upload PDFs, DOCX, TXT/CSV, images (PNG/JPG), and videos (MP4)  
+- Extract text from documents, OCR for images/videos, and audio transcription  
+- Query uploaded content via AI (LLM)  
+- View search history, edit queries, and delete entries  
+- Preview uploaded files (PDFs, images, videos)  
+- Render answers with tables, highlights, and structured insights  
+
+---
 
 ## Prerequisites
 - Python 3.x installed  
 - Required dependencies (listed in `requirements.txt`)  
 - Git (optional, for cloning the repo)  
 
+---
+
 ## Installation / Setup
 
-1. **Clone the repository (if applicable):**
-```bash
-git clone https://github.com/yourusername/yourapp.git
-cd yourapp
-
-# Start Application (Node + Python + MongoDB)
-
-## 1. Start MongoDB
+### 1. Start MongoDB
 ```bash
 # Linux/macOS
 sudo service mongod start
 # Windows
 net start MongoDB
-2. Start Backend (Node/Python)
-# Go to backend folder
+2. Start Backend (Python/FastAPI)
+# Navigate to backend folder
 cd backend
 
-# Install dependencies (if not done)
-npm install        # Node backend
-pip install -r requirements.txt   # Python backend if applicable
+# Activate virtual environment (if using .venv)
+# Linux/macOS
+source .venv/bin/activate
+# Windows (PowerShell)
+.venv\Scripts\Activate.ps1
+
+# Install dependencies
+pip install -r requirements.txt
 
 # Start backend
-npm start          # Node
-# or for Python backend
-python app.py
-
-3. Start Frontend (Node)
+uvicorn app:app --host 127.0.0.1 --port 8000 --reload
+3. Start Frontend (React)
 cd frontend
 npm install
-npm start          # Usually runs on http://localhost:3000
-
+npm start   # Runs on http://localhost:3000
 4. Access Application
-
 Frontend: http://localhost:3000
-
-Backend API: http://localhost:8000 (or configured port)
-
-MongoDB runs on default mongodb://localhost:27017
+Backend API: http://127.0.0.1:8000
+MongoDB runs on default: mongodb://localhost:27017
